@@ -1,0 +1,117 @@
+$backgroundColor: #F9F9F9;
+$backgroundColorBox: #FFFFFF;
+$blue: #42C4EC;
+$colorText: white;
+
+.c-home {
+    background-color: $backgroundColor;
+
+    &__container {
+        max-width: 1400px;
+        margin: auto;
+
+        text-align: center;
+    }
+
+
+    &__box {
+        padding-top: 45px;
+        //border: 1px solid black;
+
+        &-content {
+            padding: 30px;
+            border: 1px solid gray;
+            border-radius: 5px;
+            background-color: $backgroundColorBox;
+
+            &--genre {
+                width: 30%;
+                margin: auto;
+            }
+
+            &--kgHeightWeight {
+                width: 50%;
+                margin: auto;
+            }
+        }
+
+        &-inputs {
+            text-align: left;
+
+            & [type="text"] {
+                width: 100%;
+                padding: 10px 15px;
+                margin-bottom: 10px;
+            }
+        }
+
+        &-labels {
+            display: block;
+            font-size: 18px;
+            font-weight: 600;
+        }
+    }
+
+    &__buttons {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+
+        & button {
+            padding: 8px 10px;
+            width: 100%;
+            border: transparent;
+            background-color: $blue;
+            color: $colorText;
+            font-weight: 700;
+            font-size: 16px;
+            border-radius: 5px;
+        }
+
+
+        &--ellipse {
+            background: #fff;
+            /* color de fondo */
+            color: #014FFF;
+            /* color de fuente */
+            border: 2px solid #014FFF;
+            /* tamaño y color de borde */
+            padding: 16px 20px;
+            border-radius: 3px;
+            /* redondear bordes */
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            display: inline-block;
+
+            &:hover {
+                color: #fff;
+                /* color de fuente hover */
+            }
+
+            &::after {
+                content: "";
+                background: #014FFF;
+                /* color de fondo hover */
+                position: absolute;
+                z-index: -1;
+                padding: 16px 20px;
+                display: block;
+                border-radius: 50%;
+                left: -50%;
+                right: -50%;
+                top: -150%;
+                bottom: -150%;
+                transform: scale(0, 0);
+                transition: all 0.4s ease;
+            }
+
+            &:hover::after {
+                transition: all 0.6s ease-out;
+                transform: scale(1, 1);
+            }
+        }
+
+    }
+
+}
